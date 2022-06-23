@@ -34,14 +34,23 @@ jobs:
         cd ~
         git clone git@github.com:choulily/choulily.github.io.git
   
-    - name: Get Blog Repo And Push
+    - name: Get Blog Repo 
       run: |
-        cd ~/choulily.github.io
+        cd ~
         git clone git@github.com:choulily/hexo-blogs.git
-        cp -r hexo-blogs blog
-        rm -r hexo-blogs
-        cd blog
+        cd hexo-blogs
         rm -rf .git
-        cd ..
+        rm -rf .github
+
+    - name: Copy New Files
+      run: |
+        cd ~
+        rm -rf ./choulily.github.io/blog
+        mkdir ./choulily.github.io/blog/
+        cp ./hexo-blogs/* ./choulily.github.io/blog/
+        
+    - name: Git Fetch&Push
+      run: |
+        cd ~/choulily.github.io/
         git fetch --all && git add . && git commit -m "BOT: Sync Blogs"
         git push -u origin main
