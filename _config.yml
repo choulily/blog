@@ -79,9 +79,9 @@ theme: diaspora
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:choulily/hexo-blogs.git
+  repo: 'git@github.com:choulily/hexo-blogs.git' 
   branch: main
-  message: 'Chore[hexo] :Update'
+  message: 'Chore[hexo]: Update' 
 
 # Search
 search:
