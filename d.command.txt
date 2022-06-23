@@ -1,0 +1,1 @@
+cd ~/Desktop/hexo && hexo g && cp -r .github .deploy_git/ && cp README.md .deploy_git/README.md && cd .deploy_git ; git add . ; git commit -m "Chore: Add Extend Files" ; cd .. && hexo deploy
