@@ -47,7 +47,7 @@ jobs:
         cd ~
         rm -rf ./choulily.github.io/blog
         mkdir ./choulily.github.io/blog/
-        cp ./hexo-blogs/* ./choulily.github.io/blog/
+        cp -r ./hexo-blogs/* ./choulily.github.io/blog/
         
     - name: Git Fetch&Push
       run: |
